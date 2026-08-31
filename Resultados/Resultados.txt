@@ -1,0 +1,73 @@
+Versão 01
+
+** Conclusão
+Este experimento demonstrou a aplicação de uma Rede Neural Artificial para identificação de dispositivos IoT a partir de características associadas ao tráfego de rede.
+
+A abordagem foi estruturada como um problema de classificação supervisionada, utilizando características do tráfego como entrada e a categoria do dispositivo como variável de saída.
+
+Do ponto de vista de Segurança Cibernética, a solução pode ser utilizada como mecanismo auxiliar para descoberta e classificação de ativos.
+
+A aplicação possui relação direta com o Controle 1 – Inventário e Controle de Ativos Corporativos, uma vez que a identificação automática de dispositivos pode contribuir para aumentar a visibilidade sobre os ativos presentes na infraestrutura.
+
+Entretanto, a classificação realizada pelo modelo não determina, por si só, se um dispositivo é autorizado ou não. Essa decisão depende da comparação com o inventário corporativo e dos processos de autorização, investigação e tratamento definidos pela organização.
+
+Como trabalhos futuros, podem ser avaliados:
+
+otimização da arquitetura da rede neural;
+seleção automática das características mais relevantes;
+comparação com outros algoritmos de aprendizado de máquina;
+utilização de validação cruzada;
+tratamento de possíveis desequilíbrios entre classes;
+identificação de dispositivos desconhecidos;
+integração com inventários reais de ativos;
+utilização de dados de tráfego capturados em ambiente real;
+criação de um mecanismo de alerta para ativos não autorizados;
+avaliação do modelo em dados diferentes daqueles utilizados no treinamento.
+
+
+Versão 02
+
+O que funcionou
+
+Pipeline executou corretamente.
+Dataset foi carregado corretamente.
+Separação treino/validação funcionou.
+Não há NaN/Inf após o pré-processamento.
+Baseline estabelecido.
+Rede neural treinada.
+Early Stopping funcionando.
+Validação interna alcançou 82%.
+Teste oficial foi realizado.
+Métricas detalhadas foram produzidas.
+Erros foram analisados.
+Confiança foi analisada.
+Artefatos foram salvos.
+🟡 O que precisa investigação:
+
+enorme diferença entre validação e teste;
+distribution shift;
+generalização;
+características das 160 features;
+possível dependência do modelo de padrões específicos do treinamento.
+🔴 Problema principal
+
+19,11% no teste oficial.
+OBS: Esse resultado não permite afirmar que a solução atual é adequada para identificação confiável de dispositivos IoT.
+
+
+A Versão 02 apresenta uma avaliação metodologicamente mais rigorosa da aplicação de uma Rede Neural Artificial para identificação de dispositivos IoT.
+
+O modelo utiliza características de tráfego de rede para classificar dispositivos em categorias e pode atuar como mecanismo auxiliar de descoberta e inventário de ativos.
+
+Os resultados devem ser analisados conjuntamente por Accuracy, Balanced Accuracy, Macro-F1, métricas por classe, matriz de confusão, confiança e padrões de erro.
+
+Uma limitação relevante é a ausência de water_sensor no teste oficial, impossibilitando sua avaliação nesse conjunto.
+
+Próximos passos
+seleção de características;
+comparação com Random Forest e XGBoost;
+otimização de hiperparâmetros;
+validação cruzada;
+explicabilidade;
+detecção de dispositivos desconhecidos;
+integração com inventário corporativo.
